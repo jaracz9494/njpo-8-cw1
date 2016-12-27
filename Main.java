@@ -13,6 +13,27 @@ import java.util.Scanner;
  * @author Dominik
  */
 public class Main {
+    
+    public static String sprawdz() {
+        
+        Scanner sc = new Scanner (System.in);
+        boolean TylkoLiczby=true;
+        String x;
+        
+        do {
+            TylkoLiczby=true;
+            x=sc.nextLine();
+
+            for (int i=0; i<x.length(); ++i) { 
+                if(x.charAt(i)<'0'|| x.charAt(i)>'9'){ 
+                    TylkoLiczby=false;
+                    System.out.println("To nie jest cyfra!");
+                    break;
+                } 
+            }
+        } while(TylkoLiczby==false);
+        return x;
+    }
 
     /**
      * @param args the command line arguments
@@ -20,14 +41,16 @@ public class Main {
     public static void main(String[] args) {
         double a,b,c;
         
-        Scanner sc = new Scanner (System.in);
         
-        System.out.println("podaj 'a':");
-        a=Double.parseDouble(sc.nextLine());
+        
+        System.out.println("podaj 'a':");       
+        a=Double.parseDouble(Main.sprawdz());
+        
         System.out.println("podaj 'b':");
-        b=Double.parseDouble(sc.nextLine());
+        b=Double.parseDouble(Main.sprawdz());
+        
         System.out.println("podaj 'c':");
-        c=Double.parseDouble(sc.nextLine());
+        c=Double.parseDouble(Main.sprawdz());
         
         rownanie_kwadratowe row = new rownanie_kwadratowe(a,b,c);        
         row.licz();

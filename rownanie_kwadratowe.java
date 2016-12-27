@@ -29,27 +29,27 @@ public class rownanie_kwadratowe {
         
         delta=(b*b)-(4*a*c);
         
-        if (delta<0) {
-            System.out.println("Równanie nie ma rozwiązania");
-        }
-        
-        if (delta > 0){
-            double x1, x2;
-            x1=(-b-sqrt(delta))/(2*a);
-            x2=(-b+sqrt(delta))/(2*a);
-            System.out.println("wyniki:\n x1=" + x1 + "\n x2=" + x2);
-        }
-        
-        if (delta == 0) {
-            if (a==0 || b==0) {
-                System.out.println("a i b są zerem!");
-            } else {
+        if (a==0 || b==0) {
+            System.out.println("a i b nie mogą być zerem!");
+        } else {
+            
+            if (delta<0) {
+                System.out.println("Równanie nie ma rozwiązania");
+            }
+
+            if (delta > 0){
+                double x1, x2;
+                x1=(-b-sqrt(delta))/(2*a);
+                x2=(-b+sqrt(delta))/(2*a);
+                System.out.println("wyniki:\n x1=" + x1 + "\n x2=" + x2);
+            }
+
+            if (delta == 0) {          
                 double x;
                 x = -b/(2*a);
-                System.out.println("wynik: x=" + x);
+                System.out.println("wynik: x=" + x);           
             }
-        }
-               
+        }   
     }
     
     
