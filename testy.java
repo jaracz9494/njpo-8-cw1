@@ -9,6 +9,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import pkg08_cw1.Main;
 import pkg08_cw1.rownanie_kwadratowe;
 
 /**
@@ -89,6 +90,22 @@ public class testy {
         double result = instance.delta;
         
         assertEquals("delta dla 1,-5,-5 powinna byc rowna 45", expR, result, 0.0);
+        
+    }
+    
+    @Test
+    public void Test6() {
+        
+        double a = 0;
+        double b = 1;
+        double c = 1;
+        rownanie_kwadratowe instance = new rownanie_kwadratowe(a,b,c);
+        instance.licz();
+        
+        double expR = 0;
+        double result = instance.delta;
+        
+        assertEquals("delta dla a lub b rownego 0 bedzie wyzerowana", expR, result, 0.0);
         
     }
     

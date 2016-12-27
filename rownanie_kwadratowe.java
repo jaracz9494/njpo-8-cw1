@@ -25,13 +25,13 @@ public class rownanie_kwadratowe {
     }
     
     
-    public void licz() {
-        
-        delta=(b*b)-(4*a*c);
+    public void licz() {    
         
         if (a==0 || b==0) {
             System.out.println("a i b nie mogą być zerem!");
         } else {
+            
+            delta=(b*b)-(4*a*c);
             
             if (delta<0) {
                 System.out.println("Równanie nie ma rozwiązania");
